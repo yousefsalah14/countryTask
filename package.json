@@ -1,11 +1,10 @@
 {
   "name": "express-folder-structure",
   "version": "1.0.0",
-  "description": "A Node.js package to scaffold a basic folder structure for Express apps.",
+  "description": "Coutry Api Management",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "postinstall": "node install.js && npm i folder-structure",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
     "start": "node index.js"
