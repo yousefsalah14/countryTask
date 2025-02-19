@@ -1,0 +1,12 @@
+import { Router } from "express";
+import * as countryController from "./country.controller.js";
+import * as countrySchema from "./country.schema.js";
+import { fileUpload } from "../../utils/fileUpload.js";
+import { validation } from "../../middlewares/validation.middleware.js";
+const router = Router();
+router.post('/', fileUpload().single("flag"),validation(countrySchema.createCountry) ,countryController.createCountry);
+router.get('/',countryController.getAllCountries);
+router.get('/:id',countryController.getCountryById);
+router.patch('/:id',fileUpload().single("flag"),validation(countrySchema.updateCountry),countryController.updateCountry);
+router.delete('/:id',countryController.deleteCountry);
+export default router;

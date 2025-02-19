@@ -1,0 +1,12 @@
+import { Router } from "express";
+import * as stateController from "./state.controller.js";
+import * as stateSchema from "./state.schema.js";
+import { validation } from "../../middlewares/validation.middleware.js";
+const router = Router();
+router.post("/", validation(stateSchema.createState),stateController.createState);
+router.get("/", stateController.getStates);
+router.get("/:id", validation(stateSchema.stateById) ,stateController.stateById);
+router.get("/country/:id", validation(stateSchema.getStatesBlongsToCoutnry), stateController.getStatesBlongsToCoutnry);
+router.delete("/:id", validation(stateSchema.deleteState) ,stateController.deleteState);
+router.patch("/:id", validation(stateSchema.updateState),stateController.updateState);
+export default router;
