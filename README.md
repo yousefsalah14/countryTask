@@ -18,7 +18,7 @@ The project is structured into different directories to maintain modularity and 
    - `models/city.model.js` - Defines the schema for cities.
    - `models/state.model.js` - Defines the schema for states.
    - `models/country.model.js` - Defines the schema for countries.
-   - `models/connection.js` - Handles database connection.
+   - `connection.js` - Handles database connection.
 
 ### 2. **src (Main Source Directory)**
 
@@ -27,18 +27,9 @@ The project is structured into different directories to maintain modularity and 
 
 #### **Modules** (Handles each model separately)
 Each module contains:
-   - **Controller**: Handles the business logic.
+   - **Controller**: Handles  logic.
    - **Routes**: Defines API endpoints.
    - **Schema**: Validation using Joi.
-
-##### Example: City Module
-   - `modules/city/city.controller.js` - Handles city-related logic.
-   - `modules/city/city.routes.js` - Defines city-related API endpoints.
-   - `modules/city/city.schema.js` - Validates city data using Joi.
-
-##### Other Modules
-   - `modules/state/` - Handles state-related operations.
-   - `modules/country/` - Handles country-related operations.
 
 #### **Utils (Reusable Utility Code)**
    - `asyncHandler.js` - A wrapper function to handle async errors efficiently.
@@ -54,9 +45,6 @@ Each module contains:
 ## Getting Started
 1. Clone the repository.
 2. Install dependencies: `npm install`
-3. Configure environment variables for database and cloud setup.
-4. Run the server: `npm start`
+3. Run the server: `npm start`
 
-## Summary
-This API allows efficient management of countries, states, and cities with proper validation, error handling, and modular design, making it scalable and maintainable.
 
