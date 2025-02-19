@@ -23,7 +23,7 @@ app.use((req,res,next)=>{
     res.setHeader("Access-Control-Private-Network",true)
     return next()
 })
-
+app.get('/', (req, res) => res.send('Welcome to Country State City API!🤩'))
 app.all('*',(req,res,next)=>{
     return next( new Error("page not Found",{cause:404}))
 })
